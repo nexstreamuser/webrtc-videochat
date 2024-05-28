@@ -105,6 +105,3 @@ def on_data(data):
     if data["type"] != "new-ice-candidate":
         print('{} message from {} to {}'.format(data["type"], sender_sid, target_sid))
     socketio.emit('data', data, room=target_sid)
-
-if __name__ == "__main__":
-    socketio.run(app, debug=True)
